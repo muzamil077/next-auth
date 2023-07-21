@@ -1,16 +1,24 @@
 import { useTheme } from "next-themes";
-import {BiSolidMoon} from  "react-icons/bi"
-import {BsSunFill} from "react-icons/bs"
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 
-const TogleBtn = () => {
+
+interface themBtnProps {
+  light: ReactNode | undefined,
+  dark: ReactNode | undefined,
+}
+
+const TogleBtn = ({ light, dark }: themBtnProps) => {
   const { theme, setTheme } = useTheme();
   return (
-    <div className="mt-1 ">
+    <div className=" border-1 rounded-lg  px-2 py-1">
       {theme == "dark" ? (
-        <button onClick={() => setTheme(theme == "dark" ? "light" : "dark")}><BsSunFill/></button>
+        <button onClick={() => setTheme(theme == "dark" ? "light" : "dark")}>
+          {light}
+        </button>
       ) : (
-        <button onClick={() => setTheme(theme == "light" ? "dark" : "light")}><BiSolidMoon/></button>
+        <button onClick={() => setTheme(theme == "light" ? "dark" : "light")}>
+          {dark}
+        </button>
       )}
     </div>
   );

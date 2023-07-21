@@ -6,12 +6,12 @@ import Layout from "@/components/layout";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider attribute="class" enableSystem={false}>
-      <SessionProvider session={pageProps.session}>
+    <SessionProvider session={pageProps.session}>
+      <ThemeProvider attribute="class" enableSystem={false}>
         <Layout>
           <Component {...pageProps} />
         </Layout>
-      </SessionProvider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </SessionProvider>
   );
 }

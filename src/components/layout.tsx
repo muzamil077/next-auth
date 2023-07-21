@@ -1,6 +1,8 @@
 import React from "react";
 import { useSession } from "next-auth/react";
 import NavItem from "./navgation";
+import Footer from "./footer";
+import Home from "./home";
 
 const Layout = ({ children }: any) => {
   const { data: session } = useSession();
@@ -8,15 +10,8 @@ const Layout = ({ children }: any) => {
   return (
     <>
       <NavItem />
-      {session && session.user ? (
-        <main>{children}</main>
-      ) : (
-        <>
-          <h2>Account</h2>
-          <p>You need to sign in to access the books</p>
-        </>
-      )}
-      <h2>FOOTER</h2>
+      {session && session.user ? <main>{children}</main> : <Home />}
+      <Footer />
     </>
   );
 };
