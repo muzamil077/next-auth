@@ -35,7 +35,7 @@ const NavItem = () => {
   };
 
   return (
-    <nav className="flex dark:bg-[#0B141D] justify-around py-6 ">
+    <nav className="flex dark:bg-[#0B141D] border-b-2 justify-around py-6 ">
       <div className="flex items-center gap-10">
         {mainNavItems.map((item, index) => (
           <div key={item.label} className="">
@@ -62,8 +62,8 @@ const NavItem = () => {
               </div>
 
               {open && (
-                <div className="absolute right-[250px] dark:bg-[#0B141D]  z-10 mt-2 w-48 origin-top-right border-1 dark:border-white-500 p-5 rounded-md  py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  {ProfileItem.map((item, index) => (
+                <div className="absolute right-[370px] top-13 bg-[aliceblue] dark:bg-[#0B141D]    z-10 mt-2 w-48 origin-top-right border-1 dark:border-white-500 p-5 rounded-md  py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  {ProfileItem.map((item, index) => ( 
                     <div
                       key={item.label}
                       onClick={() => (item.label == "Logout" ? signOut() : "")}
