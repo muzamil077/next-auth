@@ -1,6 +1,6 @@
 const { spawn } = require("child_process");
 const command = "ls -l";
-const child = spawn(command, { shell: true });
+const child = spawn(command , { shell: true });
 child.stdout.on("data", (data) => {
   console.log(data);
 });

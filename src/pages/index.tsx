@@ -3,17 +3,18 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Dashborad from "./Dashboard";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import ProductCard from "@/components/Pcard";
 
+
 const Home: NextPage = () => {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <>
-    <div>
-      <ProductCard/>
-      <Dashborad  />
-    </div>
+      <div>
+        <ProductCard />
+        <Dashborad />
+      </div>
       <div className={styles.container}>
         <main className={styles.main}>
           <div>
